@@ -1,0 +1,242 @@
+@import '../template/goods-item/goods-item-two-template.wxss';
+
+page {
+  background-color: #fff;
+}
+
+.goods_list-content {
+}
+
+.goods-list_header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1001;
+}
+
+.search_header {
+  background-color: #f7f7f7;
+  width: 100%;
+  height: 38px;
+  color: #acacac;
+  font-size: 18px;  
+  padding-left: 30rpx;
+  padding-right: 128rpx;
+  box-sizing: border-box;
+}
+
+.search_header input {
+  border: 1px solid #e41436;
+  height: 40px;
+  padding-left: 60rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-top-left-radius: 8rpx;
+  border-bottom-left-radius: 8rpx;
+  position: relative;
+  min-height: 40px;
+  line-height: 40rpx;
+}
+
+.search_header .icon-sousuo {
+  position: absolute;
+  left: 50rpx;
+  top: 10rpx;
+  z-index: 10;
+  vertical-align: middle;
+}
+
+.cancel {
+  background-color: #e41436;
+  display: block;
+  width: 100rpx;
+  height: 40px;
+  min-height: 1.4em;
+  position: absolute;
+  right: 35rpx;
+  top: 0;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  line-height: 40px;
+  border-top-right-radius: 8rpx;
+  border-bottom-right-radius: 8rpx;
+}
+
+.index_header {
+  z-index: 1001;
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+}
+
+.filter-item .filter-icon icon {
+  position: absolute;
+  font-size: 26rpx;
+  left: 62%;
+  color: #818181;
+}
+
+.icon-xiajiang {
+  color: #818181;
+  font-size: 24rpx;
+}
+
+.filter-item .filter-icon .icon-xia {
+  bottom: 6%;
+}
+
+.filter-item .filter-icon .icon-xia-copy {
+  top: 9%;
+}
+
+.category-goods-filter, .no-search {
+  width: 100%;
+  height: 85rpx;
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: row;
+  z-index: 1001;
+}
+
+.category-goods-filter view, .no-search view {
+  width: 20%;
+  height: 85rpx;
+  line-height: 85rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #000;
+}
+
+.filter-item .filter-icon .icon.active, .category-goods-filter view.active,
+.no-search view.active {
+  color: #e41436;
+}
+
+.separator {
+  height: 175rpx;
+}
+
+.no-separator {
+  height: 85rpx;
+}
+
+/*mask*/
+
+.drawer_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+}
+
+.filtrate {
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  position: fixed;
+  top: 155rpx;
+  padding-bottom: 50rpx;
+}
+
+.no-filtrate {
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  position: fixed;
+  top: 85rpx;
+  padding-bottom: 50rpx;
+}
+
+.filtrate-header {
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 100%;
+  border-bottom: 1px solid #f0eff5;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.filtrate-header .tab-item {
+  width: 33%;
+  text-align: center;
+  display: inline-block;
+  font-size: 28rpx;
+}
+
+.filtrate-header .tab-item.active {
+  color: #e41436;
+  position: relative;
+}
+
+.filtrate-header .tab-item.active:after {
+  content: "";
+  display: block;
+  height: 8rpx;
+  width: 100rpx;
+  background: #e41436;
+  position: absolute;
+  transform: translate(60%);
+  bottom: 0;
+  border-radius: 16rpx;
+}
+
+.filtrate-select {
+  padding: 0 20rpx;
+  width: 100%;
+  font-size: 28rpx;
+  color: #666;
+  box-sizing: border-box;
+  z-index: 1001;
+}
+
+.filtrate-select view {
+  float: left;
+  width: 50%;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1px solid #f0eff5;
+  overflow: hidden;
+}
+
+.filtrate-select view .icon {
+  vertical-align: middle;
+  font-size: 28rpx;
+  margin-right: 10rpx;
+}
+
+.filtrate-select view .icon-xuanzhong {
+  color: #e41436;
+}
+
+.filtrate-btn {
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+  z-index: 1001;
+}
+
+.filtrate-btn text {
+  display: block;
+  color: #000;
+  background-color: #f0eff5;
+  font-size: 32rpx;
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  border-radius: 12rpx;
+}
+
+.fadein {
+  background-color: darkcyan;
+}

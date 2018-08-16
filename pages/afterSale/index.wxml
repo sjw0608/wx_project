@@ -1,0 +1,32 @@
+<import src="../template/shuju/shuju" />
+<import src="../template/loading/loading.wxml" />
+
+<view wx:if="{{!itemList.length && !loading}}">
+  <template is="shuju" />
+</view>
+
+<view wx:else>
+  <block wx:for="{{itemList}}" wx:key="item">
+    <view class='sale-item' data-afterId="{{item.afterid}}" catchtap='_goSaleDetail'>
+      <view class='item-header'>
+        <text>订单号：{{item.orderid}}</text>
+        <text style='color:#E41436;'>{{item.afterstatusStr}}</text>
+      </view>
+      <view class='item-content'>
+        <view  style="background-image:url(../../images/avator.png);background-repeat:no-repeat;background-size:120rpx">
+          <image src='{{item.pimg}}'></image>
+        </view>
+        <view class='content-text'>
+          <text>{{item.pname}}</text>
+          <text>数量：{{item.pnum}}</text>
+          <text>退款金额：{{item.aftermoney}}</text>
+        </view>
+      </view>
+      <view class='item-time'>
+        申请时间 ：{{item.aftertime}}
+      </view>
+    </view>
+  </block>
+</view>
+
+<template is="loading" wx:if="{{loading}}" />

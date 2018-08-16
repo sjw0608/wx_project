@@ -1,0 +1,58 @@
+<view class="pay-password_header">
+  <view class='circle'></view>
+  <view class='header_status'>
+    <view class="{{ step==1?'header_status-color':''}}">1、验证身份</view>
+    <view class="{{ step==2?'header_status-color':''}}">2、设置支付密码</view>
+    <view class="{{ step==3?'header_status-color':''}}">3、完成</view>
+  </view>
+</view>
+
+<view wx:if="{{step==1}}">
+  <view>
+    <view class='telphone'>
+      <text>您当前绑定的手机号：{{mobile}}</text>
+    </view>
+    <view class='pay-password_header header_input'>
+      <view class='verification_code'>
+        <input type='number' placeholder='输入验证码' bindinput='_getVcodInput'></input>
+        <text class="v-code {{vCodeColor==1?'':'get-v_code'}}" catchtap='sendCode' data-phone="{{phone}}">{{sendButtonText}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='btn-recharge' data-step='1' catchtap='_goNextStep'>
+    下一步
+  </view>
+</view>
+
+<view wx:if="{{step ==2}}">
+  <view class='telphone'>
+    <text>请设置支付密码</text>
+  </view>
+  <view class='pay-password_header header_input'>
+    <view class='password_code'>
+      <input type='password' placeholder='设置支付密码' bindinput='_getNewPwd' maxlength='6'></input>
+      <input type='password' placeholder='确认支付密码' bindinput='_getConfirmPwd' maxlength='6'></input>
+    </view>
+  </view>
+
+  <view class='btn-recharge' data-step='2' catchtap='_goNextStep'>
+    下一步
+  </view>
+</view>
+
+<view wx:if="{{step ==3}}">
+  <view class='telphone'>
+    <text>支付密码设置成功！</text>
+  </view>
+  <view class='btn-recharge' catchtap='_goNextStep'>
+    返回
+  </view>
+</view>
+
+<view class='explain'>
+  <view>提示：</view>
+  <view>
+    <text>支付密码用于账户余额、积分等支付验证。让您的资金账户更加安全。</text>
+  </view>
+</view>

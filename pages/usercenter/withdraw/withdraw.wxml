@@ -1,0 +1,22 @@
+<view class="withdraw">
+  <view catchtap='_goUserMBean'>
+    <text>觅豆</text>
+    <text class='withdraw_num'>{{wallet.UserMBean || 0}}</text>
+  </view>
+  <view catchtap='_goResidual'>
+    <text>余额</text>
+    <text class='withdraw_num'>{{wallet.UserIntegral || 0}}</text>
+  </view>
+  <view catchtap='_goBalance'>
+    <text>待结算</text>
+    <text class='withdraw_num'>{{wallet.UserTempIntegral || 0}}</text>
+  </view>
+  <view catchtap='_goCouponURL'>
+    <text>优惠券</text>
+    <text class='withdraw_num'>{{wallet.CouponNum || 0}}张</text>
+  </view>
+</view>
+
+<view class='btn-recharge' catchtap='_goKitting'>
+  提现
+</view>

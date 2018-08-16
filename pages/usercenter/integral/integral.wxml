@@ -1,0 +1,21 @@
+<import src="../../template/shuju/shuju" />
+<import src="../../template/loading/loading.wxml" />
+
+<view wx:if="{{!itemList.Items.length && !loading}}">
+  <template is="shuju" />
+</view>
+<view class='balance-con' wx:else>
+  <blcok wx:for="{{itemList.Items}}" wx:key="item">
+    <view class='balance-con_item'>
+      <view class='item-left'>
+        <text class="{{(item.ChangeIntegral>0)?'income':'font_color'}}">{{item.ChangeMiBean}}</text>
+      </view>
+      <view class='item-right'>
+        <text class='item-right_title'>{{item.ChangeDesc}}</text>
+        <text class='time'>时间：{{item.ChangeTime}}</text>
+      </view>
+    </view>
+  </blcok>
+</view>
+
+<template is="loading" wx:if="{{loading}}" />

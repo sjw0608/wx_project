@@ -1,0 +1,117 @@
+<view class='header'>
+  <view class='order-num'>
+    订单编号：{{orderDetail.orderId}}
+  </view>
+  <view class='order-details'>
+    <view>
+      <image src='{{orderDetail.pics}}'></image>
+    </view>
+    <view class='order-details_title'>
+      <view class='shop_title'>
+        <text>{{orderDetail.productName}}</text>
+      </view>
+      <view class='price_num'>
+        <text>￥{{orderDetail.price}}</text>
+        <text>x{{orderDetail.productNum}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='apply-reason'>
+    <view>订单编号：{{orderDetail.orderId}}</view>
+    <view>下单时间：{{orderDetail.orderTime}}</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">申请方式：</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker range="{{proposal}}" value="{{proposalIndex}}" bindchange="bindProposalChange">
+            <view class="weui-input">{{proposal[proposalIndex] || '请选择申请方式'}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">申请原因</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker range="{{pursueReason}}" value="{{index}}" bindchange="bindPursueReason">
+            <view class="weui-input">{{pursueReason[idx] || '请选择申请原因'}}</view>
+            <!-- <view class="weui-input" wx:else></view> -->
+          </picker>
+        </view>
+      </view>
+    </view>
+    <view>退款明细：</view>
+    <view class="weui-cells weui-cells_after-title" wx:if='{{orderDetail.costFreight}}'>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">可退运费：</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" value='{{orderDetail.costFreight}}' disabled />
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">可退金额：</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" value='{{orderDetail.price}}' disabled />
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class='rebate'>
+    退款总金额：
+    <text style='color:#e41436;'>{{orderDetail.costFreight}}</text>元
+  </view> -->
+  <view class='mobilePhone'>
+    <view>手机号码：</view>
+    <view>
+      <input value='{{orderDetail.mobile}}' disabled></input>
+    </view>
+  </view>
+  <view class='detailed-reasons'>
+    <view>详细原因：</view>
+    <view>
+      <textarea placeholder='请填写详细申请售后原因，申请成功后需要退货的请填写物流信息！不能超过100个字符！' value="{{content}}" bindinput='getContent'></textarea>
+    </view>
+  </view>
+  <view class='pic-proof'>
+    <view>图片举证</view>
+    <view class="weui-cells">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view class="weui-uploader">
+            <view class="weui-uploader__hd">
+            </view>
+            <view class="weui-uploader__bd">
+              <view class="weui-uploader__files">
+                <block wx:for="{{imgLists}}" wx:for-item="image">
+                  <view class="weui-uploader__file">
+                    <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+                  </view>
+                </block>
+              </view>
+              <view class="weui-uploader__input-box">
+                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<view class='btn-recharge' catchtap='submitSale'>
+  申请售后
+</view>
+
+<view style='height:40rpx;'></view>

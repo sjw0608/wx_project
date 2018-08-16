@@ -1,0 +1,103 @@
+<import src="../template/loading/loading.wxml" />
+<view>
+  <view class="consignee-information" catchtap='chooseAddress'>
+    <block wx:if="{{addressStatus}}">
+      <text class='address-userName'>收货人：<text>{{addressData.name}}</text></text>
+      <text class='address-telNumber'>联系方式：{{addressData.mobile}}</text>
+      <text class='address-detailInfo'>收货地址：</text>
+      <text class='address-detailInfo1'>{{addressData.province+addressData.city+addressData.county+addressData.address}}</text>
+    </block>
+    <block wx:if="{{!addressStatus}}">
+      <view class='none-address'>请选择收货地址</view>
+    </block>
+  </view>
+  <view class='goods-information'>
+    <view class='shop_name'>供应商名称/自营名称</view>
+
+    <block wx:for="{{orderInfo.Products}}" wx:key="item">
+      <view class='my-order_con' catchtap='_goGoodsDetails'>
+        <view>
+          <image src='{{item.ThumbnailPic}}'></image>
+        </view>
+        <view class='goods_title'>
+          <view class='title_con'>
+            <text>{{item.Name}}</text>
+          </view>
+          <view class='price_num'>
+            <text style='font-weight: 800;'>￥{{item.Price}}</text>
+            <text style='color: #999;'>x{{item.Nums}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <view class='goods-other'>
+      <view>
+        <text>配送方式</text>
+        <text style='color:#C8C7CD;float:right;'>快递(费用:￥{{orderInfo.DeliveryFee}}元)</text>
+      </view>
+      <view class='feedback1'>
+        <text>备注留言</text>
+        <input class="weui-input" placeholder='备注留言' value='{{memo}}' bindinput='memoChange' />
+      </view>
+      <view>
+        <text>应付金额</text>
+        <text style='color:#E41436;float:right;'>￥{{resultAmount.SurplusAmount}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='pay-way'>
+    <view class='pay-way_wx'>
+      <text class='active'>微信支付</text>
+    </view>
+  </view>
+
+  <view class='discounts'>
+    <view class='discounts-title'>优惠</view>
+    <view class='discounts-con'>
+
+      <view catchtap='_clickMiBean' data-type='mibean'>
+        <view class='left'>
+          <text>觅豆 </text>
+          <text style='color:#E41436;'>{{walletData.UsefulMiBean||0}}个</text>
+        </view>
+        <view class='right'>
+          <text wx:if="{{payedAdvance.status}}">-{{payedAdvance.amount}}</text>
+          <icon class="icon iconfont {{payedAdvance.status?'icon-xuanzhong':'icon-ico2'}}"></icon>
+        </view>
+      </view>
+      <block wx:if="{{orderInfo.TotalCashScoreEnabled>0}}">
+      <view catchtap='_clikcScore' data-type="score">
+        <view class='left'>
+          <text>余额 </text>
+          <text style='color:#E41436;'>{{walletData.UsefulIntegralAmount||0}}元</text>
+        </view>
+        <view class='right'>
+          <text wx:if="{{chargeCasher.status}}">-￥{{chargeCasher.amount}}</text>
+          <icon class="icon iconfont {{chargeCasher.status?'icon-xuanzhong':'icon-ico2'}}"></icon>
+        </view>
+      </view>
+      </block>
+      <view wx:if="{{pmtSelectData.array.length>1}}">
+        <view class='left'>
+          <text>优惠券 </text>
+          <text style='color:#E41436;'>{{pmtCount}}张</text>
+        </view>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{pmtSelectData.array}}">
+          <view class='right pmtView'>
+            <text>{{pmtSelectData.currentSelectedText}}</text>
+            <text class='after_all'></text>
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+
+  <view style='height:130rpx;'></view>
+  <view class='submit'>
+    <text>应付金额：￥{{resultAmount.SurplusAmount}}</text>
+    <text catchtap='submitOrder' class='sub_btn'>提交订单</text>
+  </view>
+</view>
+<template is="loading" wx:if="{{loading}}" />

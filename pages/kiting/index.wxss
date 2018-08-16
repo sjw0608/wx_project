@@ -1,0 +1,215 @@
+page {
+  background-color: #fff;
+}
+
+.kiting-information {
+  border-top: 1px solid #f2f2f2;
+  width: 100%;
+  padding: 30rpx;
+  font-size: 32rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.kiting-information view:last-child {
+  margin-top: 10rpx;
+  color: #666;
+  font-size: 30rpx;
+}
+
+.operate {
+  width: 100%;
+  margin-top: 10rpx;
+  font-size: 32rpx;
+  color: #666;
+  position: relative;
+}
+
+.operate_title {
+  padding-top: 40rpx;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+
+.kit-money {
+  position: relative;
+  margin: 0 30rpx;
+  padding: 31rpx 0;
+  height: 90rpx;
+  color: #000;
+  border-bottom: 1px solid #f0eff5;
+}
+
+.kit-money .icon {
+  position: absolute;
+  display: block;
+  height: 90rpx;
+  width: 30rpx;
+  line-height: 90rpx;
+  top: 31rpx;
+  left: 0rpx;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.kit-money input {
+  display: block;
+  height: 90rpx;
+  width: 100%;
+  line-height: 90rpx;
+  padding-left: 40rpx;
+  font-size: 26px;
+  font-weight: 800;
+  box-sizing: border-box;
+}
+
+.operate_other {
+  padding: 20rpx 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 24rpx;
+}
+
+.kiting_other {
+  font-size: 24rpx;
+}
+
+.watch_record {
+  margin-top: 36rpx;
+  width: 100%;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.state {
+  margin-top: 40rpx;
+  padding: 0 30rpx;
+}
+
+.state>view {
+  margin-bottom: 10rpx;
+}
+
+.state text {
+  line-height: 1.6;
+  display: block;
+}
+
+.kiting-information::after {
+  content: " ";
+  display: inline-block;
+  height: 12rpx;
+  width: 12rpx;
+  border-width: 4rpx 4rpx 0 0;
+  border-color: #c8c7cd;
+  border-style: solid;
+  -webkit-transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+  transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+  position: absolute;
+  right: 30rpx;
+  top: 45%;
+}
+
+.wallets-password {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.wallets-password .input-content-wrap {
+  position: absolute;
+  top: 200rpx;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 600rpx;
+  margin-left: -300rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  z-index: 1000;
+}
+
+.wallets-password .input-content-wrap .top {
+  display: flex;
+  align-items: center;
+  height: 90rpx;
+  border-bottom: 2rpx solid #ddd;
+  justify-content: space-around;
+}
+
+.wallets-password .input-content-wrap .top .close {
+  font-size: 44rpx;
+  color: #999;
+  font-weight: 100;
+}
+
+.wallets-password .input-content-wrap .top .forget {
+  color: #00a2ff;
+  font-size: 22rpx;
+}
+
+.wallets-password .input-content-wrap .actual_fee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  height: 100rpx;
+  margin: 0 23rpx;
+  border-bottom: 2rpx solid #ddd;
+}
+
+.wallets-password .input-content-wrap .actual_fee span {
+  font-size: 24rpx;
+}
+
+.wallets-password .input-content-wrap .actual_fee text {
+  font-size: 36rpx;
+}
+
+.wallets-password .input-content-wrap .input-password-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150rpx;
+}
+
+.wallets-password .input-content-wrap .input-password-wrap .password_dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #000;
+  box-sizing: border-box;
+  width: 90rpx;
+  height: 90rpx;
+  border: 2rpx solid #ddd;
+  border-left: none 0;
+}
+
+.wallets-password .input-content-wrap .input-password-wrap .password_dot:nth-child(1) {
+  border-left: 2rpx solid #ddd;
+}
+
+.wallets-password .input-content-wrap .input-password-wrap .password_dot i {
+  background: #000;
+  border-radius: 50%;
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.wallets-password .input-content {
+  position: absolute;
+  opacity: 0;
+  left: -100%;
+  top: 600rpx;
+  background: #f56;
+  z-index: -999;
+}
+
+.wallets-password .input-content.active {
+  z-index: -99;
+}

@@ -1,0 +1,68 @@
+<view class='kiting-information' catchtap='_goAccount' data-accountId='{{applyData.AccountId}}' wx:if="{{applyData.AccountId}}">
+  <view>{{applyData.UserRealName}}</view>
+  <view>{{applyData.AccountInfo}}</view>
+</view>
+
+<view class='kiting-information' catchtap='_goAccount' data-accountId='{{applyData.AccountId}}' wx:else>
+  <view>选择提现账户</view>
+</view>
+
+<view style='height:10rpx;background-color:#F0EFF5;'></view>
+<view class='operate'>
+  <view class='operate_title'>余额(收取{{applyData.HandlingRate}}%服务费)</view>
+  <view class='kit-money'>
+    <icon class='icon iconfont icon-money'></icon>
+    <input value='{{applyNum}}' type='number' style='font-size:26px;' bindinput='applyNum' placeholder='0.00'></input>
+  </view>
+  <view class='operate_other'>
+    <text>可提额度：{{applyData.UserIntegral}}</text>
+    <text style='color:#5f9ce5;' catchtap='_integrallAll'>全部提现</text >
+  </view>
+</view>
+
+<view class='kiting_other'>
+  <view class='btn-recharge' catchtap='withdrawBtn'> 
+    提现
+  </view>
+
+  <view class='watch_record' catchtap='_goRecord'>查看提现记录</view>
+
+  <view class='state'>
+    <view style=' font-weight:600;'>提现说明:</view>
+    <view>
+      <text>1.起提金额为{{applyData.BaseMoney}}元</text>
+      <text>2.每月提现次数为{{applyData.MonthCount}}次</text>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{wallets_password_flag}}" class="wallets-password">
+  <view class="input-content-wrap">
+    <view class="top">
+      <view catchtap="close_wallets_password" class="close">×</view>
+      <view class="txt">请输入支付密码</view>
+      <view catchtap="modify_password" class="forget">忘记密码</view>
+    </view>
+    <view catchtap="set_Focus" class="input-password-wrap">
+      <view class="password_dot">
+        <i wx:if="{{wallets_password.length>=1}}"></i>
+      </view>
+      <view class="password_dot">
+        <i wx:if="{{wallets_password.length>=2}}"></i>
+      </view>
+      <view class="password_dot">
+        <i wx:if="{{wallets_password.length>=3}}"></i>
+      </view>
+      <view class="password_dot">
+        <i wx:if="{{wallets_password.length>=4}}"></i>
+      </view>
+      <view class="password_dot">
+        <i wx:if="{{wallets_password.length>=5}}"></i>
+      </view>
+      <view class="password_dot">
+        <i wx:if="{{wallets_password.length>=6}}"></i>
+      </view>
+    </view>
+  </view>
+  <input bindinput="set_wallets_password" class="input-content" password type="number" focus="{{isFocus}}" maxlength="6" />
+</view>

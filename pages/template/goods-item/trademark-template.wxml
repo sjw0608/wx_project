@@ -1,0 +1,23 @@
+<template name="trademarkGoods">
+  <view class='trademark-goods_item' bindtap='goodsDetails' data-goodsId='{{item.goodsId}}'>
+    <view class='trademark-image'>
+      <image src='{{item.imgSrc}}'></image>
+    </view>
+    <view class='trademark-ticket_share'>
+      <view class='trademark-price_ticket'>
+         {{item.couponPrice}}元券 
+      </view>
+      <view class='trademark-share_make'>
+        分享赚
+        <icon class='icon iconfont icon-zuanshi'></icon>
+        {{item.earnMoney}}
+      </view>
+    </view>
+    <view>
+      <text class='trademark-title'>{{item.title}}</text>
+    </view>
+    <view class='trademark-price'>
+      <text>￥{{item.goodsPrice}}</text>
+    </view>
+  </view>
+</template>

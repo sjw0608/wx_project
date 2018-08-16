@@ -1,0 +1,156 @@
+.sale-header {
+  background-color: #e41436;
+  padding: 30rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.status {
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.feedback {
+  margin: 10rpx 10rpx;
+  text-align: right;
+}
+
+.feedback text {
+  font-size: 24rpx;
+  padding: 8rpx 28rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  border: 1px solid #fff;
+}
+
+.my-product_detail {
+  margin-top: 20rpx;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.my-product_detail>view {
+  margin: 0 30rpx;
+  border-bottom: 1px dashed #ddd;
+}
+
+.my-product_detail>view:last-child {
+  border-bottom: none;
+}
+
+.my-product_detail {
+  font-size: 24rpx;
+  padding: 20rpx 30rpx 20rpx 0;
+  box-sizing: border-box;
+}
+
+.my-product_detail>view {
+  margin-left: 30rpx;
+}
+
+.ordinal {
+  padding-bottom: 10rpx;
+}
+
+.ordinal, .order-product {
+  border-bottom: 2px dashed #ddd;
+}
+
+.ordinal view {
+  padding: 10rpx 0;
+}
+
+.order-product {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx 0 30rpx;
+}
+
+.order-product image {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 30rpx;
+}
+
+.order-product_title {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-product_title text {
+  line-height: 1.6;
+}
+
+.ordinal-other {
+  color: #999;
+  margin-top: 10rpx;
+}
+
+.ordinal-other>view {
+  padding: 8rpx 0;
+}
+
+.negotiate {
+  margin-top: 20rpx;
+  font-size: 24rpx;
+}
+
+.negotiate-status, .negotiate-title {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.negotiate-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 6rpx;
+}
+
+.negititate-reason {
+  margin-top: 20rpx;
+  font-size: 24rpx;
+}
+
+.negotiate-details {
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.sale_img {
+  padding: 0 30rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.sale_img text {
+  display: block;
+  height: 32rpx;
+  line-height: 32rpx;
+  font-size: 24rpx;
+}
+
+.sale_img image {
+  width: 240rpx;
+  height: 240rpx;
+  border-radius: 8rpx;
+  margin-top: 10rpx;
+  margin-right: 10rpx;
+}
+
+.btn-sale {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background-color: #e41436;
+  color: #fff;
+}

@@ -1,0 +1,80 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/usercenter/index",
+    "pages/shop/index",
+    "pages/goodsdetails/details",
+    "pages/search/search",
+    "pages/collectgoods/collectgoods",
+    "pages/order/order-list",
+    "pages/setting/setting",
+    "pages/setting/updateUserInfo/index",
+    "pages/goodslist/goods-list",
+    "pages/usercenter/withdraw/withdraw",
+    "pages/usercenter/balance/balance",
+    "pages/usercenter/integral/integral",
+    "pages/submitOrder/submitOrder",
+    "pages/service/index",
+    "pages/orderdetails/index",
+    "pages/kiting/index",
+    "pages/record/index",
+    "pages/account/index",
+    "pages/modification/index",
+    "pages/shipAddress/index",
+    "pages/addAddress/index",
+    "pages/payPassword/index",
+    "pages/afterSale/index",
+    "pages/afterSale/MyProductDetail/index",
+    "pages/afterSale/SubmitReturnProduct/index",
+    "pages/afterSale/message/index",
+    "pages/afterSale/wuliu/index",
+    "pages/bindingPhone/index",
+    "pages/usercenter/residual/index",
+    "pages/evaluate/index",
+    "pages/evaluate/conmmentList/index",
+    "pages/scope/index",
+    "pages/payResult/result",
+    "pages/transferPage/index",
+    "pages/usercenter/coupon/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "觅方",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "backgroundColor": "#FFFFFF",
+    "selectedColor": "#E41436",
+    "color": "#898989",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/a-b.png",
+        "selectedIconPath": "images/a.png"
+      },
+      {
+        "pagePath": "pages/shop/index",
+        "text": "购物车",
+        "iconPath": "images/c-b.png",
+        "selectedIconPath": "images/c.png"
+      },
+      {
+        "pagePath": "pages/service/index",
+        "text": "客服",
+        "iconPath": "images/d-b.png",
+        "selectedIconPath": "images/d.png"
+      },
+      {
+        "pagePath": "pages/usercenter/index",
+        "text": "个人中心",
+        "iconPath": "images/e-b.png",
+        "selectedIconPath": "images/e.png"
+      }
+    ]
+  }
+}

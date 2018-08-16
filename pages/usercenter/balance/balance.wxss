@@ -1,0 +1,69 @@
+@import '../../template/shuju/shuju.wxss';
+.balance{
+  width: 100%;
+}
+.balance-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 24rpx;
+  background-color: #fff;
+  margin: 0 auto;
+  border-top:1px solid #F0EFF5;
+}
+.income{
+  color: #31c000;
+}
+.font_color{
+  color: #e41436;
+}
+
+.expense{
+  color: #ff0000;
+}
+
+.balance-con{
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.balance-con .balance-con_item{
+  padding: 20rpx;
+  width: 100%;
+  min-height: 100rpx;
+   display: flex;
+  flex-direction: row; 
+  margin: 20rpx 0;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+.balance-con .balance-con_item  .item-left  {
+   width: 25%; 
+  min-height: 100rpx;
+  font-size: 36rpx;
+  text-align: center;
+  margin-right: 2%;
+}
+
+ .balance-con .balance-con_item  .item-left  .income{
+   white-space: pre-wrap;
+ }
+.balance-con .balance-con_item .item-right{      
+  width: 73%;    
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: column;
+}
+.balance-con .balance-con_item .time{
+  color: #a5a5b2;
+  margin-top: 14rpx;
+}
+
+.item-right_title{
+  font-size:28rpx
+}

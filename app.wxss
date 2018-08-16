@@ -1,0 +1,154 @@
+@import 'common/font/iconfont.wxss';
+@import 'common/loading.wxss';
+@import 'common/weui.wxss';
+
+page {
+  font-family: Helvetica, STHeiti STXihei,Microsoft JhengHei, Microsoft YaHei, Arial;
+  font-weight: normal;
+  background-color: #f0eff5;
+}
+
+/**隐藏scroll-view滚动条*/
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.separator1 {
+  width: 100%;
+  height: 20rpx;
+  background-color: #f2f2f2;
+}
+
+.icon-heart {
+  color: #acacac;
+}
+
+.icon-xin {
+  color: #fe4c55;
+}
+
+.icon-custom-service {
+  color: #98af20;
+}
+
+.icon-jilumian {
+  color: #18bcf6;
+}
+
+.icon-icon_msg {
+  color: #52abfa;
+}
+
+.icon-yaoqingmatianchong {
+  color: #3acd9e;
+}
+
+.allOrder {
+  color: #999;
+}
+
+.allOrder::after {
+  content: " ";
+  display: inline-block;
+  height: 12rpx;
+  width: 12rpx;
+  border-width: 4rpx 4rpx 0 0;
+  border-color: #c8c7cd;
+  border-style: solid;
+  -webkit-transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+  transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+  margin-left: 6rpx;
+  margin-top: -2rpx;
+}
+
+.btn-recharge {
+  margin: 90rpx 30rpx 0 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 12rpx;
+  font-size: 30rpx;
+  background-color: #e41436;
+  color: #fff;
+  margin-top: 50rpx;
+}
+
+.backTop {
+  width: 60rpx;
+  height: 60rpx;
+  background: #fff;
+  position: fixed;
+  right: 20rpx;
+  bottom: 130rpx;
+  border-radius: 30rpx;
+  border: 1px solid #f5f5f5;
+  line-height: 60rpx;
+  text-align: center;
+}
+
+.backTop text {
+  font-size: 45rpx;
+}
+
+.touch-item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.del {
+  font-size: 28rpx;
+  background-color: #e41436;
+  width: 120rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  -webkit-transform: translateX(120rpx);
+  transform: translateX(120rpx);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.touch-move-active .item, .touch-move-active .del {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.item {
+  width: 100%;
+  padding: 30rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #f0eff5;
+  margin-right: 0;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: translateX(120rpx);
+  transform: translateX(120rpx);
+  margin-left: -120rpx;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; /*初始状态 透明度为0*/
+  }
+
+  100% {
+    opacity: 1; /*结尾状态 透明度为1*/
+  }
+}
+
+
+
+.animation-fadeIn{
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-delay: 0s;
+}

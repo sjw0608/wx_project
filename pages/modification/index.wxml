@@ -1,0 +1,51 @@
+<view class="modification-header">
+  <view>选择提现方式</view>
+  <view class='select_way'>
+    <text class="{{accountType == 1?'active':''}}" bindtap='_switchType' data-accountType='1'>支付宝</text>
+    <text class="{{accountType == 4?'active':''}}" bindtap='_switchType' data-accountType='4'>微信</text>
+  </view>
+</view>
+
+<view class='modification-information' wx:if="{{accountType == 1}}">
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd"> 
+        <view class="weui-label">姓名</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" type='text' placeholder="请输入姓名" value='{{RealName}}' bindinput='_getRealName' />
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">支付宝账号</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" type='text' placeholder="请输入支付宝账号" value='{{AccountInfo}}' bindinput='_getZfbInfo' />
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='modification-information' wx:if="{{accountType == 4}}">
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">微信昵称</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" type='text' disabled value='{{nickName}}' />
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='btn-recharge' bindtap='_saveAccount'>
+  保存
+</view>
+
+<view class='btn-recharge btn-delete' catchtap='_delectAccount' wx:if='{{AccountId}}'>
+  删除账户
+</view>

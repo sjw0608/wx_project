@@ -1,0 +1,77 @@
+<import src="../template/goods-item/goods-item-two-template.wxml" />
+<import src="../template/backTop/backTop" />
+<import src="../template/loading/loading.wxml" />
+
+<view>
+  <view class='goods-list_header'>
+    <view class="search_header">
+      <icon class='icon iconfont icon-sousuo'></icon>
+      <input type='text' placeholder='输入商品名称' bindconfirm="confirmSearch" bindinput="bindSearchInput" value='{{keyword}}'></input>
+      <text class='cancel' catchtap='confirmSearch'>搜索</text>
+    </view>
+
+    <view class="category-goods-filter">
+      <view class='filter-item {{filterTap==1 ?"active":""}}' bindtap='clickfilterTap' data-type='1' data-order='{{order}}' data-msg='新品'>
+        新品
+        <view class='filter-icon'>
+          <icon class='{{filterTap==1 & order==1?"active":""}} icon iconfont icon-xia'></icon>
+          <icon class='{{filterTap==1 & order==2?"active":""}} icon iconfont icon-xia-copy'></icon>
+        </view>
+      </view>
+      <view class='{{filterTap==2?"active":""}}' bindtap='clickfilterTap' data-type='2' data-msg='销量'>
+        销量
+        <icon class='icon iconfont icon-xiajiang' style='font-size:24rpx;'></icon>
+      </view>
+      <view class='filter-item {{filterTap==3?"active":""}}' bindtap='clickfilterTap' data-type='3' data-sort='asc' data-order='{{order}}' data-msg='价格'>
+        价格
+        <view class='filter-icon'>
+          <icon class='{{filterTap==3 & order==1?"active":""}} icon iconfont icon-xia'></icon>
+          <icon class='{{filterTap==3 & order==2?"active":""}} icon iconfont icon-xia-copy'></icon>
+        </view>
+      </view>
+      <view class='{{filterTap==4?"active":""}}' bindtap='clickfilterTap' data-type='4' data-msg='最新'>综合</view>
+      <view data-type='5' data-msg='筛选' bindtap="powerDrawer" data-statu="{{statu}}">筛选</view>
+    </view>
+  </view>
+  <view class=" separator'}}"></view>
+  <view class='goods_list-content  animation-fadeIn'>
+    <view wx:if="{{!goodsItems.length>0 && !loading}}" style="width:100%;text-align:center;">暂时没有查到商品</view>
+    <block wx:for="{{goodsItems}}" wx:key="item">
+      <template is="itemTwo" data="{{item,index}}" />
+    </block>
+  </view>
+
+  <view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}" catchtouchmove="true"></view>
+
+  <view class=" filtrate" wx:if="{{showModalStatus}}" catchtouchmove="true">
+    <view class='filtrate-header'>
+      <view class="tab-item {{currentTab==0?'active':''}}" data-index='0' bindtap="swichNav">品牌</view>
+      <view class="tab-item {{currentTab==1?'active':''}}" data-index='1' bindtap="swichNav">分类</view>
+      <view class="tab-item {{currentTab==2?'active':''}}" data-index='2' bindtap="swichNav">标签</view>
+    </view>
+    <scroll-view class='filtrate-select' scroll-y style='height:{{clientHeight-190}}px;'>
+      <view wx:for='{{goodsBrands}}' wx:for-item='item' data-index='{{index}}' wx:if='{{currentTab ==0}}' data-item='{{item}}' catchtap='_selectBrands'>
+        <icon class="icon iconfont {{item.isSelect?'icon-xuanzhong':'icon-ico2'}}"></icon>
+        <text>{{item.BrandName}}</text>
+      </view>
+
+      <view wx:for='{{goodsCats}}' wx:for-item='item' data-index='{{index}}' wx:if='{{currentTab ==1}}' data-item='{{item}}' catchtap='_selectCats'>
+        <icon class="icon iconfont {{item.isSelect?'icon-xuanzhong':'icon-ico2'}}"></icon>
+        <text>{{item.CatName}}</text>
+      </view>
+
+      <view wx:for='{{goodsTags}}' wx:for-item='item' data-index='{{index}}' wx:if='{{currentTab ==2}}' data-item='{{item}}' catchtap='_selectTags'>
+        <icon class="icon iconfont {{item.isSelect?'icon-xuanzhong':'icon-ico2'}}"></icon>
+        <text>{{item.TagName}}</text>
+      </view>
+
+    </scroll-view>
+
+    <view class='filtrate-btn' catchtap='_getFiltrateList'>
+      <text>确认</text>
+    </view>
+  </view>
+</view>
+
+<template is="backTop" wx:if="{{backTopValue ==true}}" />
+<template is="loading" wx:if="{{loading}}" />

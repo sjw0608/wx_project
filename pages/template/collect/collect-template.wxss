@@ -1,0 +1,103 @@
+.goodsItem_title {
+  margin: 67rpx 0;
+  text-align: center;
+  font-size: 40rpx;
+  color: 33rpx;
+}
+
+.goodsItem_title text {
+  display: inline-block;
+  width: 55rpx;
+  height: 55rpx;
+  background-color: #434343;
+  border-radius: 55rpx;
+  line-height: 55rpx;
+  font-size: 33rpx;
+  color: #fff;
+}
+
+.goods-item-container {
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #f0eff5;
+  box-sizing: border-box;
+}
+
+.goods-item-left {
+  display: flex;
+  flex-direction: row;
+  float: left;
+}
+
+.select-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+  margin-top: 25%;
+}
+
+.select-icon .icon-ico2 {
+  font-size: 40rpx;
+  color: #ddd;
+}
+
+.select-icon .icon-guanbi {
+  font-size: 40rpx;
+  color: #09bb06;
+}
+
+.goods-item-left image {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.goods-item-right {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+
+.goods-item-title {
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  font-size: 28rpx;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.new-price_ticket {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.oldprice {
+  font-size: 28rpx;
+  text-decoration: line-through;
+  color: #acacac;
+}
+
+.old-ticket_sales {
+  margin-top: 10rpx;
+}
+
+.sales_volume {
+  font-size: 28rpx;
+  color: #acacac;
+}
+
+.price {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.sales_volume {
+  font-size: 28rpx;
+}
+
+.new-price_ticket .price {
+  color: #e41436;
+}
